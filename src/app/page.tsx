@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Button } from '../components/ui/button';
 
-type ResultType = {
+export type ResultType = {
   info: {
     public_id: string;
   };

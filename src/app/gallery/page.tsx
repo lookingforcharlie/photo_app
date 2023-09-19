@@ -14,9 +14,10 @@ const GalleryPage: FC<GalleryPageProps> = async ({}) => {
   // TODO: fetch all the images from cloudinary when open this page
   const results = (await cloudinary.v2.search
     .expression('resource_type:image')
-    .sort_by('public_id', 'desc')
-    .max_results(30)
+    .sort_by('created_at', 'desc')
+    .max_results(50)
     .execute()) as { resources: SearchResult[] };
+
   return (
     <section className='flex flex-col space-y-6'>
       <div className='flex items-center justify-between'>
